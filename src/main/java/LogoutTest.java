@@ -7,17 +7,17 @@ public class LogoutTest {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://qa3magento.dev.evozon.com/");
-
-        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a > span.label")).click();
-        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        //login
+        driver.findElement(By.cssSelector(".skip-link.skip-account")).click();
+        driver.findElement(By.cssSelector("[title=\"Log In\"]")).click();
         driver.findElement(By.id("email")).sendKeys("ion@creanga.com");
-        driver.findElement(By.id("pass")).sendKeys("123456");
+        driver.findElement(By.id("pass")).sendKeys("1234567");
         driver.findElement(By.id("send2")).click();
+        //logout
+        driver.findElement(By.cssSelector(".skip-link.skip-account")).click();
+        driver.findElement(By.cssSelector("[title=\"Log Out\"]")).click();
 
-        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a > span.label")).click();
-        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
-
-        String logoutMessage=driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout > div > div > div.page-title")).getText();
+        String logoutMessage=driver.findElement(By.cssSelector("div.page-title")).getText();
         if(logoutMessage.equalsIgnoreCase("YOU ARE NOW LOGGED OUT"))
             System.out.println("Succes!");
         else

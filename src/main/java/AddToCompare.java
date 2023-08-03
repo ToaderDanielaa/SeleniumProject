@@ -8,17 +8,17 @@ public class AddToCompare {
         driver.manage().window().maximize();
         driver.get("http://qa3magento.dev.evozon.com/");
 
-        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a > span.label")).click();
-        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        driver.findElement(By.cssSelector(".skip-link.skip-account")).click();
+        driver.findElement(By.cssSelector("[title=\"Log In\"]")).click();
         driver.findElement(By.id("email")).sendKeys("ion@creanga.com");
-        driver.findElement(By.id("pass")).sendKeys("123456");
+        driver.findElement(By.id("pass")).sendKeys("1234567");
         driver.findElement(By.id("send2")).click();
 
         driver.findElement(By.id("search")).sendKeys("skirt");
-        driver.findElement(By.cssSelector("#search_mini_form > div.input-box > button")).click();
-        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div.main > div.col-wrapper > div.col-main > div.category-products > ul > li:nth-child(1) > div > div.actions > ul > li:nth-child(2) > a")).click();
+        driver.findElement(By.cssSelector("button.button.search-button")).click();
+        driver.findElement(By.cssSelector("ul.add-to-links a.link-compare")).click();
 
-        String messageAdded=driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div.main > div.col-wrapper > div.col-main > ul > li > ul > li > span")).getText();
+        String messageAdded=driver.findElement(By.cssSelector("li.success-msg")).getText();
         if(messageAdded.equalsIgnoreCase("The product Racer Back Maxi Dress has been added to comparison list."))
             System.out.println("Succes!");
         else
