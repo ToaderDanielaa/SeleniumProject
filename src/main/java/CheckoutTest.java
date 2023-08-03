@@ -51,5 +51,6 @@ public class CheckoutTest extends BaseTest{
         Select select3 = new Select(driver.findElement(By.id("shipping:country_id")));
         select3.selectByVisibleText("Tonga");
         driver.findElement(By.id("shipping:telephone")).sendKeys("0261551565");
+        driver.findElement(By.cssSelector("div#shipping-buttons-container [title=\"Continue\"]"));
     }
 }
