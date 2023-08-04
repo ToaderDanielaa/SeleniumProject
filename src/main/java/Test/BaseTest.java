@@ -16,6 +16,7 @@ public class BaseTest {
     protected AccountPage accountPage;
     protected RegisterPage registerPage;
     protected LogoutPage logoutPage;
+    protected ProductPage productPage;
 
     @Before
     public void initDriver() {
@@ -27,6 +28,7 @@ public class BaseTest {
         accountPage = new AccountPage(driver);
         registerPage=new RegisterPage(driver);
         logoutPage=new LogoutPage(driver);
+        productPage=new ProductPage(driver);
         homepage.open();
     }
 

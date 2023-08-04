@@ -15,6 +15,9 @@ public class ProductTest extends BaseTest{
     }
     @Test
     public void addToCart(){
-
+        String name="KHAKI BOWERY CHINO PANTS";
+       homepage.setSearchInput();
+       homepage.clickSearchButton();
+       productPage.searchProductAndClick(name);
     }
 }
