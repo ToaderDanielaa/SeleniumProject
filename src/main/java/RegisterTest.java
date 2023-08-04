@@ -12,6 +12,9 @@ import java.sql.Driver;
 public class RegisterTest extends BaseTest {
     @Test
     public void validRegisterTest(){
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://qa3magento.dev.evozon.com/");
         driver.findElement(By.cssSelector(".skip-link.skip-account")).click();
         driver.findElement(By.cssSelector("[title=\"Register\"]")).click();
         driver.findElement(By.id("firstname")).sendKeys("AnaMaria");
