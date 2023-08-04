@@ -41,6 +41,7 @@ public class CheckoutTest extends BaseTest{
         driver.findElement(By.cssSelector("[for=\"billing:use_for_shipping_no\"]")).click();
         driver.findElement(By.cssSelector("div#billing-buttons-container [title=\"Continue\"] ")).click();
         //step2
+        //
         driver.findElement(By.id("shipping:firstname")).sendKeys("AnaMaria");
         driver.findElement(By.id("shipping:lastname")).sendKeys("Ioana");
         driver.findElement(By.id("shipping:street1")).sendKeys("Street idk");
