@@ -22,7 +22,7 @@ public class RegisterTest {
         String welcomeText=driver.findElement(By.cssSelector("li.success-msg span")).getText();
         if(welcomeText.equalsIgnoreCase("Thank you for registering with Madison Island."))
         {
-            System.out.println("Success!");
+            System.out.println("Successssssss!");
         }
         else
         {
